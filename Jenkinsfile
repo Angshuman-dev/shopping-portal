@@ -2,6 +2,12 @@ pipeline {
   agent none
   stages {
     stage('build') {
+      agent {
+        docker {
+          image 'lagairogo/node'
+        }
+
+      }
       steps {
         echo 'this is the build job'
         sh 'npm install'
