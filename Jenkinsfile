@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'lagairogo/node'
+          image 'lagairogo/node:4-alpine'
         }
 
       }
@@ -17,7 +17,7 @@ pipeline {
     stage('test') {
       agent {
         docker {
-          image 'lagairogo/node'
+          image 'lagairogo/node:4-alpine'
         }
 
       }
@@ -31,7 +31,7 @@ npm test'''
     stage('package') {
       agent {
         docker {
-          image 'lagairogo/node'
+          image 'lagairogo/node:4-alpine'
         }
 
       }
