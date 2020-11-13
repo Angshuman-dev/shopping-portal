@@ -42,11 +42,11 @@ npm run package'''
       }
     }
 
-    stage('Build and Publish') {
+    stage('build and publish') {
       steps {
         script {
           docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
-            def dockerImage = docker.build("Angshuman-dev/shopping-portal:v${env.BUILD_ID}", "./")
+            def dockerImage = docker.build("angshuman3/shopping-portal:v${env.BUILD_ID}", "./")
             dockerImage.push()
             dockerImage.push("latest")
           }
